@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div className='flex min-h-screen'>
-      <main className='flex flex-col w-full justify-center items-center py-10 px-5 sm:px-32 lg:w-1/2'>
+      <main className='flex flex-col w-full justify-center items-center py-10 px-5 md:px-20 md:w-1/2 lg:px-32'>
         <h1 className='text-3xl text-zinc-900 font-semibold w-full mb-4'>
           Welcome back
         </h1>
@@ -51,7 +51,7 @@ export default function App() {
               placeholder='******'
             />
 
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center gap-4'>
               <label className='flex gap-2 items-center'>
                 <input
                   type='checkbox'
@@ -64,7 +64,7 @@ export default function App() {
 
               <a
                 href='#'
-                className='text-xs font-semibold text-violet-600'
+                className='text-xs font-semibold text-violet-600 text-right'
               >
                 Forgot password
               </a>
@@ -87,13 +87,13 @@ export default function App() {
               href='#'
               className='text-violet-600 font-semibold'
             >
-              Sign Up
+              Sign up
             </a>
           </p>
         </div>
       </main>
 
-      <div className='w-1/2 bg-zinc-100 hidden lg:flex justify-center items-center'>
+      <div className='w-1/2 bg-zinc-100 hidden md:flex justify-center items-center'>
         <Illustration className='w-4/5 h-4/5' />
       </div>
     </div>
