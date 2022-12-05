@@ -2,6 +2,7 @@ import { Input } from './components/Input';
 import { FormEvent } from 'react';
 
 import { ReactComponent as GoogleLogo } from './assets/google-logo.svg';
+import { ReactComponent as Illustration } from './assets/illustration.svg';
 
 export default function App() {
   const signIn = (event: FormEvent) => {
@@ -9,8 +10,8 @@ export default function App() {
   };
 
   return (
-    <div className='flex h-screen'>
-      <main className='flex flex-col w-full justify-center items-center px-5 sm:px-32 lg:w-1/2'>
+    <div className='flex min-h-screen'>
+      <main className='flex flex-col w-full justify-center items-center py-10 px-5 sm:px-32 lg:w-1/2'>
         <h1 className='text-3xl text-zinc-900 font-semibold w-full mb-4'>
           Welcome back
         </h1>
@@ -78,11 +79,8 @@ export default function App() {
         </div>
       </main>
 
-      <div className='w-1/2 bg-zinc-100 hidden lg:flex'>
-        <img
-          src=''
-          alt=''
-        />
+      <div className='w-1/2 bg-zinc-100 hidden lg:flex justify-center items-center'>
+        <Illustration className='w-4/5 h-4/5' />
       </div>
     </div>
   );
