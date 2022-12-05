@@ -1,17 +1,28 @@
 import { Input } from './components/Input';
+import { FormEvent } from 'react';
+
 import { ReactComponent as GoogleLogo } from './assets/google-logo.svg';
 
 export default function App() {
+  const signIn = (event: FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
     <div className='flex h-screen'>
-      <main className='flex flex-col w-1/2 justify-center items-center px-40'>
-        <h1 className='text-3xl text-zinc-900 w-full mb-4'>Welcome back</h1>
+      <main className='flex flex-col w-full justify-center items-center px-5 sm:px-32 lg:w-1/2'>
+        <h1 className='text-3xl text-zinc-900 font-semibold w-full mb-4'>
+          Welcome back
+        </h1>
         <p className='text-sm text-zinc-500 w-full mb-8'>
           Welcome back! Please enter your details.
         </p>
 
         <div className='w-full'>
-          <form className='flex flex-col gap-6'>
+          <form
+            onSubmit={signIn}
+            className='flex flex-col gap-6'
+          >
             <Input
               label='Email'
               type='email'
@@ -31,14 +42,14 @@ export default function App() {
                   type='checkbox'
                   name='rememberLogin'
                 />
-                <span className='text-xs font-medium'>
+                <span className='text-xs font-semibold'>
                   Remember for 30 days
                 </span>
               </label>
 
               <a
                 href='#'
-                className='text-xs font-medium text-violet-600'
+                className='text-xs font-semibold text-violet-600'
               >
                 Forgot password
               </a>
@@ -46,12 +57,12 @@ export default function App() {
 
             <button
               type='submit'
-              className='bg-violet-600 text-white text-sm font-medium p-2 rounded-lg hover:bg-violet-700 transition-colors'
+              className='bg-violet-600 text-white text-sm font-semibold px-2 h-11 rounded-lg hover:bg-violet-700 transition-colors'
             >
-              Sign In
+              Sign in
             </button>
           </form>
-          <button className='flex justify-center items-center gap-2 mt-4 border-zinc-200 border-2 bg-white w-full p-2 rounded-lg text-sm font-medium'>
+          <button className='flex justify-center items-center gap-2 mt-4 border-zinc-200 border-2 bg-white w-full px-2 h-11 rounded-lg text-sm font-semibold'>
             <GoogleLogo className='w-6 h-6' /> Sign in with Google
           </button>
 
@@ -59,7 +70,7 @@ export default function App() {
             Don't have an account?{' '}
             <a
               href='#'
-              className='text-violet-600 font-medium'
+              className='text-violet-600 font-semibold'
             >
               Sign Up
             </a>
@@ -67,7 +78,7 @@ export default function App() {
         </div>
       </main>
 
-      <div className='w-1/2 bg-zinc-100'>
+      <div className='w-1/2 bg-zinc-100 hidden lg:flex'>
         <img
           src=''
           alt=''
