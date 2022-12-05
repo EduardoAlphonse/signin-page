@@ -1,42 +1,77 @@
+import { Input } from './components/Input';
+import { ReactComponent as GoogleLogo } from './assets/google-logo.svg';
+
 export default function App() {
   return (
-    <div>
-      <main>
-        <h1>Welcome back</h1>
-        <p>Welcome back! Please enter your details.</p>
+    <div className='flex h-screen'>
+      <main className='flex flex-col w-1/2 justify-center items-center px-40'>
+        <h1 className='text-3xl text-zinc-900 w-full mb-4'>Welcome back</h1>
+        <p className='text-sm text-zinc-500 w-full mb-8'>
+          Welcome back! Please enter your details.
+        </p>
 
-        <div>
-          <form>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="Enter your email" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="Enter your email" />
-            </label>
+        <div className='w-full'>
+          <form className='flex flex-col gap-6'>
+            <Input
+              label='Email'
+              type='email'
+              name='email'
+              placeholder='Enter your email'
+            />
+            <Input
+              label='Password'
+              type='password'
+              name='password'
+              placeholder='******'
+            />
 
-            <div>
-              <label>
-                <input type="checkbox" name="rememberLogin" />
-                <span>Remember for 30 days</span>
+            <div className='flex justify-between items-center'>
+              <label className='flex gap-2 items-center'>
+                <input
+                  type='checkbox'
+                  name='rememberLogin'
+                />
+                <span className='text-xs font-medium'>
+                  Remember for 30 days
+                </span>
               </label>
 
-              <a href="#">Forgot password</a>
+              <a
+                href='#'
+                className='text-xs font-medium text-violet-600'
+              >
+                Forgot password
+              </a>
             </div>
 
-            <button type="submit">Sign In</button>
+            <button
+              type='submit'
+              className='bg-violet-600 text-white text-sm font-medium p-2 rounded-lg hover:bg-violet-700 transition-colors'
+            >
+              Sign In
+            </button>
           </form>
-          <button>Sign in with Google</button>
+          <button className='flex justify-center items-center gap-2 mt-4 border-zinc-200 border-2 bg-white w-full p-2 rounded-lg text-sm font-medium'>
+            <GoogleLogo className='w-6 h-6' /> Sign in with Google
+          </button>
 
-          <p>
-            Don't have an account? <a href="#">Sign Up</a>
+          <p className='text-center text-xs text-zinc-500 mt-6'>
+            Don't have an account?{' '}
+            <a
+              href='#'
+              className='text-violet-600 font-medium'
+            >
+              Sign Up
+            </a>
           </p>
         </div>
       </main>
 
-      <div>
-        <img src="" alt="" />
+      <div className='w-1/2 bg-zinc-100'>
+        <img
+          src=''
+          alt=''
+        />
       </div>
     </div>
   );
