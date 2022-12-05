@@ -1,12 +1,25 @@
 import { Input } from './components/Input';
-import { FormEvent } from 'react';
+import { FormEvent, useRef } from 'react';
 
 import { ReactComponent as GoogleLogo } from './assets/google-logo.svg';
 import { ReactComponent as Illustration } from './assets/illustration.svg';
 
 export default function App() {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const signIn = (event: FormEvent) => {
     event.preventDefault();
+
+    if (formRef.current) {
+      const data = new FormData(formRef.current);
+
+      const dataObject = [...data.entries()].reduce((accumulator, current) => {
+        accumulator[String(current[0])] = String(current[1]);
+        return accumulator;
+      }, {} as { [key: string]: string });
+
+      console.log(dataObject);
+    }
   };
 
   return (
@@ -23,6 +36,7 @@ export default function App() {
           <form
             onSubmit={signIn}
             className='flex flex-col gap-6'
+            ref={formRef}
           >
             <Input
               label='Email'
